@@ -5,14 +5,16 @@
 
 
 
-#define ROWS 3
-#define FOOD_LENGTH 10
+#define ROWS 4
+#define FOOD_LENGTH 15
 
 
     char foods[ROWS][FOOD_LENGTH] = {
+
+                                        {'z', 'u', 'p', 'p', 'a', ' ','t','o','s', 's', 'c', 'a', 'n', 'a', '\0' },
                                         {'z', 'a', 'e', 'k', '\0' },
                                         {'a', 'g', 'n', 'e', '\0' },
-                                        {'b', 'o', 'r', 'o', 'v', 'i','n','k','a', '\0' },
+                                        {'b', 'o', 'r', 'o', 'v', 'i','n','k','a', '\0' }
 
 
                                     };
@@ -42,16 +44,24 @@ int main() {
 
     }
 
+    int tempSquares;
+
     for(i = 0; i < ROWS; i++) {
 
-        for(j = 0; j < FOOD_LENGTH; j++) {
+        for(j = 0; foods[i][j] != '\0'; j++) { // foods[i][j] != '\0' like j < atrlen(foods[i])
 
             printf("[%c]", foods[i][j]);
 
+
         }
 
+        tempSquares = FOOD_LENGTH - strlen(foods[i]);
 
-            printf("\n");
+            for(int z = 0; z < tempSquares + 5; z++) {
+                printf("[ ]");
+            }
+
+        printf("\n");
     }
 
 
